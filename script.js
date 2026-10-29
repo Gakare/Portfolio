@@ -11,11 +11,19 @@ const themeToggle = document.getElementById("themeToggle");
 
 function setTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
-  try { localStorage.setItem("theme", theme); } catch (e) { /* storage blocked, that's ok */ }
+  try {
+    localStorage.setItem("theme", theme);
+  } catch (e) {
+    /* storage blocked, that's ok */
+  }
 }
 
 let savedTheme = null;
-try { savedTheme = localStorage.getItem("theme"); } catch (e) { /* ignore */ }
+try {
+  savedTheme = localStorage.getItem("theme");
+} catch (e) {
+  /* ignore */
+}
 setTheme(savedTheme || "light");
 
 themeToggle.addEventListener("click", () => {
@@ -28,11 +36,7 @@ themeToggle.addEventListener("click", () => {
 // Put your own roles in this list. Each one goes in quotes,
 // separated by commas. Watch your commas!
 // ============================================================
-const roles = [
-  "CS student",
-  "hackathon builder",
-  "future software engineer"
-];
+const roles = ["CPE/EE Student", "Personal projects", "Future homeless"];
 
 const roleElement = document.getElementById("rotatingRole");
 let roleIndex = 0;
@@ -52,7 +56,7 @@ copyEmail.addEventListener("click", async () => {
     await navigator.clipboard.writeText(copyEmail.dataset.email);
     copyEmail.textContent = "Copied!";
   } catch (e) {
-    copyEmail.textContent = copyEmail.dataset.email;  // fallback: just show the address
+    copyEmail.textContent = copyEmail.dataset.email; // fallback: just show the address
   }
   setTimeout(() => (copyEmail.textContent = "Copy Email"), 1800);
 });

@@ -30,21 +30,33 @@
 }
 
 /* ---------- Base ---------- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
-a { color: inherit; }
+a {
+  color: inherit;
+}
 
-main, .nav, .footer {
+main,
+.nav,
+.footer {
   max-width: var(--max-width);
   margin: 0 auto;
   padding-left: 20px;
@@ -60,7 +72,9 @@ main, .nav, .footer {
   padding-bottom: 20px;
 }
 
-.nav-logo { text-decoration: none; }
+.nav-logo {
+  text-decoration: none;
+}
 
 .avatar {
   display: inline-grid;
@@ -86,7 +100,9 @@ main, .nav, .footer {
   font-weight: 500;
 }
 
-.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover {
+  color: var(--accent);
+}
 
 .theme-toggle {
   border: 1px solid var(--border);
@@ -103,30 +119,36 @@ main, .nav, .footer {
 .hero {
   padding: 90px 0 70px;
   display: grid;
-  grid-template-columns: 1fr auto;   /* text takes the space, photo sits on the right */
+  grid-template-columns: 1fr auto; /* text takes the space, photo sits on the right */
   align-items: center;
   gap: 48px;
 }
 
 .hero-photo {
-  justify-self: end;                 /* pin it to the right edge */
+  justify-self: end; /* pin it to the right edge */
   width: 280px;
   height: 280px;
-  object-fit: cover;                 /* crop to fill the circle, no stretching */
-  border-radius: var(--radius);                /* rounded square */
-  box-shadow: 0 0 0  var(--accent);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  object-fit: cover; /* crop to fill the circle, no stretching */
+  border-radius: var(--radius); /* rounded square */
+  box-shadow: 0 0 0 var(--accent);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .hero-photo:hover {
-  transform: translate(-6px, -6px);        /* photo lifts up and left */
-  box-shadow: 12px 12px 0 var(--accent);   /* solid accent block appears behind it */
+  transform: translate(-6px, -6px); /* photo lifts up and left */
+  box-shadow: 12px 12px 0 var(--accent); /* solid accent block appears behind it */
 }
 
 /* Skip the motion for people who turn off animations in their OS settings */
 @media (prefers-reduced-motion: reduce) {
-  .hero-photo { transition: none; }
-  .hero-photo:hover { transform: none; }
+  .hero-photo {
+    transition: none;
+  }
+  .hero-photo:hover {
+    transform: none;
+  }
 }
 
 .eyebrow {
@@ -169,14 +191,18 @@ h1 {
   text-decoration: none;
   font-weight: 600;
   border: 1px solid transparent;
-  transition: transform 0.15s, background 0.15s;
-  font: inherit;          
-  font-weight: 600;      
-  cursor: pointer;        
+  transition:
+    transform 0.15s,
+    background 0.15s;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
   color: inherit;
 }
 
-.btn:hover { transform: translateY(-2px); }
+.btn:hover {
+  transform: translateY(-2px);
+}
 
 .btn-primary {
   background: var(--accent);
@@ -188,7 +214,9 @@ h1 {
   background: var(--surface);
 }
 
-.btn-ghost:hover { border-color: var(--accent); }
+.btn-ghost:hover {
+  border-color: var(--accent);
+}
 
 /* ---------- Sections ---------- */
 .section {
@@ -201,7 +229,9 @@ h2 {
   margin-bottom: 18px;
 }
 
-h3 { margin: 26px 0 12px; }
+h3 {
+  margin: 26px 0 12px;
+}
 
 .section > p {
   color: var(--muted);
@@ -209,14 +239,16 @@ h3 { margin: 26px 0 12px; }
 }
 
 /* ---------- Skills + tags ---------- */
-.skills, .tags {
+.skills,
+.tags {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.skills li, .tags li {
+.skills li,
+.tags li {
   background: var(--accent-soft);
   color: var(--accent);
   padding: 5px 12px;
@@ -240,7 +272,9 @@ h3 { margin: 26px 0 12px; }
   display: flex;
   flex-direction: column;
   gap: 12px;
-  transition: transform 0.15s, border-color 0.15s;
+  transition:
+    transform 0.15s,
+    border-color 0.15s;
 }
 
 .project-card:hover {
@@ -248,7 +282,9 @@ h3 { margin: 26px 0 12px; }
   border-color: var(--accent);
 }
 
-.project-card h3 { margin: 0; }
+.project-card h3 {
+  margin: 0;
+}
 
 .project-card p {
   color: var(--muted);
@@ -279,7 +315,10 @@ h3 { margin: 26px 0 12px; }
 
 /* ---------- Phones ---------- */
 @media (max-width: 760px) {
-  .nav-links { gap: 12px; font-size: 0.9rem; }
+  .nav-links {
+    gap: 12px;
+    font-size: 0.9rem;
+  }
   .hero {
     padding: 60px 0 50px;
     grid-template-columns: 1fr;
@@ -289,6 +328,6 @@ h3 { margin: 26px 0 12px; }
     width: 180px;
     height: 180px;
     justify-self: center;
-    order: -1;          /* above the name on phones */
+    order: -1; /* above the name on phones */
   }
 }
